@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+  background-color: #2a2c2f;
+}
+
+.page {
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #2a2c2f;
+  color: white;
+}

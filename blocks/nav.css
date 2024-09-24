@@ -1,0 +1,9 @@
+.nav {
+  display: flex;
+  width: 100%;
+}
+
+.nav__logo {
+  margin: 0 auto;
+  padding-top: 34px;
+}

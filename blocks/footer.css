@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  margin: 0 auto;
+}
+
+.footer__copyright {
+  display: flex;
+  margin: 100px auto 24px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.14;
+}
