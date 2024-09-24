@@ -1,9 +1,13 @@
 .nav {
   display: flex;
   width: 100%;
+  min-height: 84px;
+  border-bottom: 1px solid #545454;
 }
 
 .nav__logo {
-  margin: 0 auto;
+  margin: 0 27px;
   padding-top: 34px;
+  max-width: 126px;
+  max-height: 24px;
 }

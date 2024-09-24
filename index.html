@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Un viaje épico de Kentucky a Burundi pasando por Gales y Ucrania"
-    />
-    <meta name="keywords" content="Patria, Viaje, Ciudades" />
+    <meta name="description" content="An image sharing site for explorers" />
+    <meta name="keywords" content="Photography, Travel, Landscapes" />
     <meta name="author" content="Giusepe Velázquez" />
-    <title>Triple Ten Art Gallery</title>
+    <title>Around The U.S.</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
@@ -18,88 +15,96 @@
         <nav class="nav">
           <img
             src="./images/logo.svg"
-            alt="Logotipo de la Galería Triple Ten"
+            alt="Around The U.S. Logo"
             class="nav__logo"
           />
         </nav>
-        <h1 class="header__title">De patria a patria</h1>
-        <p class="header__subtitle">
-          Un viaje épico de Kentucky a Burundi pasando por Gales y Ucrania
-        </p>
-        <img
-          src="./images/landscape.jpg"
-          alt="Landscape by Kalegin Michail"
-          class="header__image"
-        />
+        <h1 class="header__title">Around The U.S.</h1>
+        <div class=""></div>
       </header>
       <main class="content">
-        <section class="intro" id="intro">
-          <h2 class="intro__title">
-            Conoce un poco mejor los lugares de los que proceden tus colegas en
-            línea
-          </h2>
-          <p class="intro__subtitle">
-            Todo ser humano es un artista, un ser de la libertad, llamado a
-            participar en la transformación y reforma de las condiciones, el
-            pensamiento y las estructuras que conforman e influyen en nuestras
-            vidas.
-            <span class="intro__author">— Joseph Beuys</span>
-          </p>
-          <p class="intro__text">
-            La ciudad de TripleTen ha reunido a profesionales de diferentes
-            rincones del mundo. Hoy, la Galería de Arte TripleTen se enorgullece
-            de presentar historias y fotografías de algunas de las personas que
-            dedican su tiempo y esfuerzo a hacer que los futuros profesionales
-            de la tecnología de esta ciudad se sientan como en casa. Cada uno de
-            nosotros tiene una historia única sobre el lugar del que procede. No
-            dudes en añadir a nuestra colección tu propia historia y una obra de
-            arte visual dedicada a tu ciudad natal. No importa de dónde seas,
-            nos alegra que seas nuestro vecino.
-          </p>
+        <section class="profile" id="profile">
+          <img
+            src="./images/avatar.png"
+            alt="Avatar image"
+            class="profile__avatar"
+          />
+          <div class="profile__title">
+            <h2 class="profile__name">Jacques Cousteau</h2>
+            <button class="profile__edit-button">✎</button>
+          </div>
+          <p class="profile__description">Explorador</p>
+          <button class="profile__add-button">+</button>
         </section>
         <section class="photo-grid">
-          <img
-            src="./images/grid-picture-0.png"
-            alt="Coastal Rural Landscape"
-            class="photo-grid__image"
-          />
-          <img
-            src="./images/grid-picture-1.png"
-            alt="Cloudy Landscape"
-            class="photo-grid__image"
-          />
-          <img
-            src="./images/grid-picture-2.png"
-            alt="Architectural Landscape"
-            class="photo-grid__image"
-          />
-          <img
-            src="./images/grid-picture-3.png"
-            alt="Coastal Urban Landscape"
-            class="photo-grid__image"
-          />
-          <img
-            src="./images/grid-picture-4.png"
-            alt="Rural Landscape"
-            class="photo-grid__image"
-          />
-          <img
-            src="./images/grid-picture-5.png"
-            alt="Urban Garden"
-            class="photo-grid__image"
-          />
-          <img
-            src="./images/grid-picture-6.png"
-            alt="Minimal Housing Example"
-            class="photo-grid__image"
-          />
-          <img
-            src="./images/grid-picture-7.png"
-            alt="Rustic Housing Example"
-            class="photo-grid__image"
-          />
+          <div class="photo-grid__card">
+            <img
+              src="./images/grid-picture-0.png"
+              alt="Coastal Rural Landscape"
+              class="photo-grid__card-image"
+            />
+            <div class="photo-grid__card-bottom">
+              <h3 class="photo-grid__card-title">Valle de Yosemite</h3>
+              <button class="photo-grid__card-button_like">♥</button>
+            </div>
+          </div>
+          <div class="photo-grid__card">
+            <img
+              src="./images/grid-picture-0.png"
+              alt="Coastal Rural Landscape"
+              class="photo-grid__card-image"
+            />
+            <div class="photo-grid__card-bottom">
+              <h3 class="photo-grid__card-title">Lago Louise</h3>
+              <button class="photo-grid__card-button_like">♥</button>
+            </div>
+          </div>
+          <div class="photo-grid__card">
+            <img
+              src="./images/grid-picture-0.png"
+              alt="Coastal Rural Landscape"
+              class="photo-grid__card-image"
+            />
+            <div class="photo-grid__card-bottom">
+              <h3 class="photo-grid__card-title">Montañas Calvas</h3>
+              <button class="photo-grid__card-button_like">♥</button>
+            </div>
+          </div>
+          <div class="photo-grid__card">
+            <img
+              src="./images/grid-picture-0.png"
+              alt="Coastal Rural Landscape"
+              class="photo-grid__card-image"
+            />
+            <div class="photo-grid__card-bottom">
+              <h3 class="photo-grid__card-title">Latemar</h3>
+              <button class="photo-grid__card-button_like">♥</button>
+            </div>
+          </div>
+          <div class="photo-grid__card">
+            <img
+              src="./images/grid-picture-0.png"
+              alt="Coastal Rural Landscape"
+              class="photo-grid__card-image"
+            />
+            <div class="photo-grid__card-bottom">
+              <h3 class="photo-grid__card-title">Vanois National Park</h3>
+              <button class="photo-grid__card-button_like">♥</button>
+            </div>
+          </div>
+          <div class="photo-grid__card">
+            <img
+              src="./images/grid-picture-0.png"
+              alt="Coastal Rural Landscape"
+              class="photo-grid__card-image"
+            />
+            <div class="photo-grid__card-bottom">
+              <h3 class="photo-grid__card-title">Lago di Braies</h3>
+              <button class="photo-grid__card-button_like">♥</button>
+            </div>
+          </div>
         </section>
-        <section class="places">
+        <!-- <section class="places">
           <div class="places__content places__content_cricieth">
             <h3 class="places__title">Cricieth, Gales</h3>
             <div class="places__subtitle">
@@ -277,11 +282,11 @@
               Compra esta obra como NFT
             </button>
           </div>
-        </section>
+        </section> -->
       </main>
       <footer class="footer" id="footer">
-        <p class="footer__copyright">&copy; 2024. Giusepe Velázquez</p>
+        <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
       </footer>
     </div>
-  </body> -->
+  </body>
 </html>
