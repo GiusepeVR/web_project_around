@@ -23,6 +23,29 @@
         <div class=""></div>
       </header>
       <main class="content">
+        <section class="popup">
+          <div class="popup__container">
+            <button type="submit" class="popup__close-button">X</button>
+            <form name="edit" class="popup__form">
+              <h4 class="popup__title">Editar perfil</h4>
+              <input
+                type="text"
+                name="profile-name"
+                id="#profile-name"
+                placeholder="Nombre"
+                class="popup__input"
+              />
+              <input
+                type="text"
+                name="profile-about"
+                id="#profile-about"
+                placeholder="Acerca de mí"
+                class="popup__input"
+              />
+              <button type="submit" class="popup__save-button">Guardar</button>
+            </form>
+          </div>
+        </section>
         <section class="profile" id="profile">
           <img
             src="./images/avatar.png"
@@ -31,10 +54,35 @@
           />
           <div class="profile__title">
             <h2 class="profile__name">Jacques Cousteau</h2>
-            <button class="profile__edit-button">✎</button>
+            <button class="profile__edit-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="8"
+                height="8"
+                fill="none"
+                class="profile__edit-svg"
+              >
+                <path
+                  fill="#fff"
+                  d="M7.5.996 1.953 6.575l-.99-1.01L6.494 0 7.5.996ZM0 7.5l1.472-.441-1.033-.996L0 7.5Z"
+                />
+              </svg>
+            </button>
           </div>
           <p class="profile__description">Explorador</p>
-          <button class="profile__add-button">+</button>
+          <button class="profile__add-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <path
+                fill="#fff"
+                d="M16 7.111H8.889V0H7.11v7.111H0V8.89h7.111V16H8.89V8.889H16V7.11Z"
+              />
+            </svg>
+          </button>
         </section>
         <section class="photo-grid">
           <div class="photo-grid__card">
@@ -45,244 +93,137 @@
             />
             <div class="photo-grid__card-bottom">
               <h3 class="photo-grid__card-title">Valle de Yosemite</h3>
-              <button class="photo-grid__card-button_like">♥</button>
+              <button class="photo-grid__card-button_like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="19"
+                  fill="none"
+                >
+                  <path
+                    fill="#000"
+                    d="M19.376 9.786c2.165-2.243 2.165-5.884 0-8.104a5.415 5.415 0 0 0-7.845 0l-1.05 1.11-1.05-1.088C7.266-.56 3.751-.56 1.608 1.682.558 2.77 0 4.213 0 5.745 0 7.277.579 8.72 1.608 9.808L10.48 19l8.895-9.214ZM1.372 5.745c0-1.155.428-2.22 1.222-3.02.814-.843 1.864-1.265 2.915-1.265 1.05 0 2.1.422 2.915 1.265l2.057 2.11 2.058-2.132a4.026 4.026 0 0 1 5.83 0 4.327 4.327 0 0 1 1.222 3.02c0 1.154-.429 2.22-1.222 3.02l-7.888 8.192-7.887-8.17c-.772-.822-1.222-1.888-1.222-3.02Z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div class="photo-grid__card">
             <img
-              src="./images/grid-picture-0.png"
+              src="./images/grid-picture-1.png"
               alt="Coastal Rural Landscape"
               class="photo-grid__card-image"
             />
             <div class="photo-grid__card-bottom">
               <h3 class="photo-grid__card-title">Lago Louise</h3>
-              <button class="photo-grid__card-button_like">♥</button>
+              <button class="photo-grid__card-button_like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="19"
+                  fill="none"
+                >
+                  <path
+                    fill="#000"
+                    d="M19.376 9.786c2.165-2.243 2.165-5.884 0-8.104a5.415 5.415 0 0 0-7.845 0l-1.05 1.11-1.05-1.088C7.266-.56 3.751-.56 1.608 1.682.558 2.77 0 4.213 0 5.745 0 7.277.579 8.72 1.608 9.808L10.48 19l8.895-9.214ZM1.372 5.745c0-1.155.428-2.22 1.222-3.02.814-.843 1.864-1.265 2.915-1.265 1.05 0 2.1.422 2.915 1.265l2.057 2.11 2.058-2.132a4.026 4.026 0 0 1 5.83 0 4.327 4.327 0 0 1 1.222 3.02c0 1.154-.429 2.22-1.222 3.02l-7.888 8.192-7.887-8.17c-.772-.822-1.222-1.888-1.222-3.02Z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div class="photo-grid__card">
             <img
-              src="./images/grid-picture-0.png"
+              src="./images/grid-picture-2.png"
               alt="Coastal Rural Landscape"
               class="photo-grid__card-image"
             />
             <div class="photo-grid__card-bottom">
               <h3 class="photo-grid__card-title">Montañas Calvas</h3>
-              <button class="photo-grid__card-button_like">♥</button>
+              <button class="photo-grid__card-button_like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="19"
+                  fill="none"
+                >
+                  <path
+                    fill="#000"
+                    d="M19.376 9.786c2.165-2.243 2.165-5.884 0-8.104a5.415 5.415 0 0 0-7.845 0l-1.05 1.11-1.05-1.088C7.266-.56 3.751-.56 1.608 1.682.558 2.77 0 4.213 0 5.745 0 7.277.579 8.72 1.608 9.808L10.48 19l8.895-9.214ZM1.372 5.745c0-1.155.428-2.22 1.222-3.02.814-.843 1.864-1.265 2.915-1.265 1.05 0 2.1.422 2.915 1.265l2.057 2.11 2.058-2.132a4.026 4.026 0 0 1 5.83 0 4.327 4.327 0 0 1 1.222 3.02c0 1.154-.429 2.22-1.222 3.02l-7.888 8.192-7.887-8.17c-.772-.822-1.222-1.888-1.222-3.02Z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div class="photo-grid__card">
             <img
-              src="./images/grid-picture-0.png"
+              src="./images/grid-picture-3.png"
               alt="Coastal Rural Landscape"
               class="photo-grid__card-image"
             />
             <div class="photo-grid__card-bottom">
               <h3 class="photo-grid__card-title">Latemar</h3>
-              <button class="photo-grid__card-button_like">♥</button>
+              <button class="photo-grid__card-button_like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="19"
+                  fill="none"
+                >
+                  <path
+                    fill="#000"
+                    d="M19.376 9.786c2.165-2.243 2.165-5.884 0-8.104a5.415 5.415 0 0 0-7.845 0l-1.05 1.11-1.05-1.088C7.266-.56 3.751-.56 1.608 1.682.558 2.77 0 4.213 0 5.745 0 7.277.579 8.72 1.608 9.808L10.48 19l8.895-9.214ZM1.372 5.745c0-1.155.428-2.22 1.222-3.02.814-.843 1.864-1.265 2.915-1.265 1.05 0 2.1.422 2.915 1.265l2.057 2.11 2.058-2.132a4.026 4.026 0 0 1 5.83 0 4.327 4.327 0 0 1 1.222 3.02c0 1.154-.429 2.22-1.222 3.02l-7.888 8.192-7.887-8.17c-.772-.822-1.222-1.888-1.222-3.02Z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div class="photo-grid__card">
             <img
-              src="./images/grid-picture-0.png"
+              src="./images/grid-picture-4.png"
               alt="Coastal Rural Landscape"
               class="photo-grid__card-image"
             />
             <div class="photo-grid__card-bottom">
               <h3 class="photo-grid__card-title">Vanois National Park</h3>
-              <button class="photo-grid__card-button_like">♥</button>
+              <button class="photo-grid__card-button_like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="19"
+                  fill="none"
+                >
+                  <path
+                    fill="#000"
+                    d="M19.376 9.786c2.165-2.243 2.165-5.884 0-8.104a5.415 5.415 0 0 0-7.845 0l-1.05 1.11-1.05-1.088C7.266-.56 3.751-.56 1.608 1.682.558 2.77 0 4.213 0 5.745 0 7.277.579 8.72 1.608 9.808L10.48 19l8.895-9.214ZM1.372 5.745c0-1.155.428-2.22 1.222-3.02.814-.843 1.864-1.265 2.915-1.265 1.05 0 2.1.422 2.915 1.265l2.057 2.11 2.058-2.132a4.026 4.026 0 0 1 5.83 0 4.327 4.327 0 0 1 1.222 3.02c0 1.154-.429 2.22-1.222 3.02l-7.888 8.192-7.887-8.17c-.772-.822-1.222-1.888-1.222-3.02Z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div class="photo-grid__card">
             <img
-              src="./images/grid-picture-0.png"
+              src="./images/grid-picture-5.png"
               alt="Coastal Rural Landscape"
               class="photo-grid__card-image"
             />
             <div class="photo-grid__card-bottom">
               <h3 class="photo-grid__card-title">Lago di Braies</h3>
-              <button class="photo-grid__card-button_like">♥</button>
+              <button class="photo-grid__card-button_like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="19"
+                  fill="none"
+                >
+                  <path
+                    fill="#000"
+                    d="M19.376 9.786c2.165-2.243 2.165-5.884 0-8.104a5.415 5.415 0 0 0-7.845 0l-1.05 1.11-1.05-1.088C7.266-.56 3.751-.56 1.608 1.682.558 2.77 0 4.213 0 5.745 0 7.277.579 8.72 1.608 9.808L10.48 19l8.895-9.214ZM1.372 5.745c0-1.155.428-2.22 1.222-3.02.814-.843 1.864-1.265 2.915-1.265 1.05 0 2.1.422 2.915 1.265l2.057 2.11 2.058-2.132a4.026 4.026 0 0 1 5.83 0 4.327 4.327 0 0 1 1.222 3.02c0 1.154-.429 2.22-1.222 3.02l-7.888 8.192-7.887-8.17c-.772-.822-1.222-1.888-1.222-3.02Z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </section>
-        <!-- <section class="places">
-          <div class="places__content places__content_cricieth">
-            <h3 class="places__title">Cricieth, Gales</h3>
-            <div class="places__subtitle">
-              <a href="#" class="places__artist-url">Artistas</a>
-              <ul class="places__artist-list">
-                <li class="places__artist-name">Steffan Warren, editor jefe</li>
-                <li class="places__artist-name">
-                  Kseniya Glagoleva, gerente de proyectos
-                </li>
-              </ul>
-            </div>
-            <div class="places__image-container">
-              <img
-                src="./images/places-image-0.png"
-                alt="Cricieth Landscape"
-                class="places__image"
-              />
-              <div class="places__image-overlay"></div>
-            </div>
-
-            <div class="places__text">
-              <p class="places__paragraph">
-                Las ruinas medievales del castillo de Cricieth dominan la ciudad
-                desde una roca que extiende sobre el mar. Se cree que fue
-                construido por Llewelyn el Grande en el S. XIII. 800 años
-                después, la autodenominada *Perla de Gales en las costas de
-                Snowdonia*, se ha convertido en un popular destino turístico
-                durante los meses de verano.
-              </p>
-              <p class="places__paragraph">
-                A pocos pasos de camino al castillo, puedes disfrutar de los
-                mejores helados del mundo en Cadwalader's, cuyo ingrediente
-                secreto se rumorea que son algas marinas de la localidad. Otra
-                cosa por la que es famosa Cricieth es por haber ganado el premio
-                *Gales en flor* durante cinco años seguidos por sus
-                espectaculares muestras florales alrededor de la ciudad. También
-                vio nacer a David Lloyd George, el único galés que ha sido
-                Primer Ministro del Reino Unido.
-              </p>
-            </div>
-            <button class="places__purchase-button">
-              Compra esta obra como NFT
-            </button>
-          </div>
-          <div class="places__content places__content_berea">
-            <h3 class="places__title">Berea, EE. UU.</h3>
-            <div class="places__subtitle">
-              <a href="#" class="places__artist-url">Artista</a>
-              <ul class="places__artist-list">
-                <li class="places__artist-name">
-                  Travis Turner, autor y editor
-                </li>
-              </ul>
-            </div>
-            <div class="places__image-container">
-              <img
-                src="./images/places-image-1.png"
-                alt="Berea Landscape"
-                class="places__image"
-              />
-              <div class="places__image-overlay"></div>
-            </div>
-            <div class="places__text">
-              <p class="places__paragraph">
-                Berea es una pequeña ciudad ubicada en la parte central de
-                Kentucky. La ciudad está rodeada por hermosos bosques y campos.
-                Es conocida como la capital de la artesanía del estado, y sus
-                visitantes hallarán infinitas posibilidades para ir de compras:
-                tiendas de joyas, velas y artículos de madera artesanales;
-                galerías, talleres de vidrio y más. La ciudad celebra un
-                festival anual que rinde tributo al "spoonbread", un platillo
-                local hecho de pan de maíz y que se sirve con una cuchara de
-                madera.
-              </p>
-              <p class="places__paragraph">
-                Aunque, probablemente es mejor conocida por su universidad. El
-                Berea College fue fundado en 1855 y fue la primera universidad
-                sureña integrada racialmente, así como la primera en ser
-                coeducacional. Algo que en cierta manera la hace única, es que
-                no cobra colegiatura: cada estudiante recibe una beca del 100%.
-              </p>
-            </div>
-            <button class="places__purchase-button">
-              Compra esta obra como NFT
-            </button>
-          </div>
-          <div class="places__content places__content_muramvya">
-            <h3 class="places__title">Muramvya, Burundi</h3>
-            <div class="places__subtitle">
-              <a href="#" class="places__artist-url">Artista</a>
-              <ul class="places__artist-list">
-                <li class="places__artist-name">
-                  Grevisse Kenguruka, editor técnico
-                </li>
-              </ul>
-            </div>
-            <div class="places__image-container">
-              <img
-                src="./images/places-image-2.png"
-                alt="Muramvya Landscape"
-                class="places__image"
-              />
-              <div class="places__image-overlay"></div>
-            </div>
-            <div class="places__text">
-              <p class="places__paragraph">
-                Muramvya es una de las 18 provincias de Burundi. Durante la
-                época del reino, Muramvya fue su capital; y en 2017, gracias a
-                su paisaje cultural y natural, se añadió a la Lista provisional
-                de patrimonio mundial de la UNESCO. Se encuentra ubicada en el
-                centro de Burundi, entre las capitales política y económica del
-                país.
-              </p>
-              <p class="places__paragraph">
-                Su clima es más bien frío durante la noche, pero durante el día,
-                podrías pensar que estás en el paraíso. A sus 2,665 metros
-                (8,743 ft) sobre el nivel del mar, el Monte Teza es uno de los
-                lugares más fríos de la provincia. Pero es justo esa brisa
-                fresca la que da pie a una de las más grandes plantaciones de té
-                y café del país, y que representa la mayoría de las
-                exportaciones de Burundi.
-              </p>
-              <p class="places__paragraph">
-                El Parque nacional de Kibira, una de las mayores reservas de
-                vida silvestre para los simios, ocupa parte de cuatro
-                provincias, incluyendo Muramvya. Este parque nacional se
-                encuentra en las cúspides de las hermosas montañas de la
-                Divisoria Congo-Nilo, cuyas alturas oscilan entre 1,550 y 2,660
-                metros. Está lleno de hermosa vegetación, y es una fuente para
-                los diversos ríos y arroyos que proporcionan agua alrededor del
-                país.
-              </p>
-            </div>
-            <button class="places__purchase-button">
-              Compra esta obra como NFT
-            </button>
-          </div>
-          <div class="places__content places__content_mexico-city">
-            <h3 class="places__title">Ciudad de México, México</h3>
-            <div class="places__subtitle">
-              <a href="#" class="places__artist-url">Artista</a>
-              <ul class="places__artist-list">
-                <li class="places__artist-name">
-                  Giusepe Velázquez, fotógrafo
-                </li>
-              </ul>
-            </div>
-            <div class="places__image-container">
-              <img
-                src="./images/places-image-3.png"
-                alt="Mexico City Landscape"
-                class="places__image"
-              />
-              <div class="places__image-overlay"></div>
-            </div>
-
-            <div class="places__text">
-              <p class="places__paragraph">
-                El poniente de la Ciudad de México es una zona que combina
-                historia, modernidad y naturaleza en un entorno único. Compuesta
-                por barrios emblemáticos como Polanco, Lomas de Chapultepec y
-                Tacuba, esta delegación es un reflejo de la diversidad y el
-                dinamismo que caracterizan a la capital.
-              </p>
-              <p class="places__paragraph">
-                También, alberga algunos de los monumentos más emblemáticos de
-                la ciudad, como el imponente Castillo de Chapultepec, que domina
-                desde lo alto el Bosque de Chapultepec, el mayor pulmón verde de
-                la metrópoli. A su sombra, museos de renombre mundial, como el
-                Museo Nacional de Antropología y el Museo Tamayo, invitan al
-                visitante a sumergirse en el arte y la historia.
-              </p>
-            </div>
-            <button class="places__purchase-button">
-              Compra esta obra como NFT
-            </button>
-          </div>
-        </section> -->
       </main>
       <footer class="footer" id="footer">
         <p class="footer__copyright">&copy; 2021 Around The U.S.</p>

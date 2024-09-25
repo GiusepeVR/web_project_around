@@ -27,8 +27,25 @@
   margin: 0 auto;
 }
 
+.profile__edit-button {
+  height: 18px;
+  width: 18px;
+  background-color: black;
+  border: solid 1px white;
+  display: flex;
+}
+
+.profile__edit-svg {
+  width: 7.5px;
+  height: 7.5px;
+}
+
 .profile__add-button {
   width: calc(100% - 38px);
   margin: 36px 0;
   min-height: 50px;
+  background-color: black;
+  border-radius: 2px;
+  border: solid 2px white;
+  cursor: pointer;
 }
