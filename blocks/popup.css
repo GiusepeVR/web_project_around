@@ -6,6 +6,7 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
+  z-index: 10;
 }
 
 .popup_opened {
@@ -52,6 +53,10 @@
 
 .popup__title {
   margin: 0 0 76px 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: normal;
 }
 
 .popup__input {
@@ -99,5 +104,11 @@
     top: 0px;
     right: 0;
     transform: scale(1);
+  }
+  .popup__title {
+    margin: 0 0 54px 0;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
   }
 }
