@@ -32,7 +32,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: Inter;
+  font-family: "Inter", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 900;
   line-height: 1;
@@ -68,6 +68,6 @@
     grid-gap: 17px 20px;
   }
   .photo-grid__card-title {
-    max-width: 300px;
+    max-width: 200px;
   }
 }
