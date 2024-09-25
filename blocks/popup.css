@@ -1,5 +1,10 @@
 .popup {
+  position: fixed;
+  height: 100%;
   width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
 }
 
@@ -22,10 +27,19 @@
 
 .popup__close-button {
   position: absolute;
-  top: -48px;
+  top: -58px;
+  right: -12px;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 0;
+}
+
+.popup__close-svg {
+  position: absolute;
+  top: 0;
   right: 0;
-  height: 36px;
-  width: 36px;
+  transform: scale(0.7);
 }
 
 .popup__form {
@@ -37,8 +51,7 @@
 }
 
 .popup__title {
-  margin: 0;
-  margin-bottom: 76px;
+  margin: 0 0 76px 0;
 }
 
 .popup__input {
@@ -50,8 +63,7 @@
 }
 
 .popup__save-button {
-  margin: 0;
-  margin-top: 46px;
+  margin: 46px 0 0 0;
   padding: 0;
   width: 100%;
   min-height: 46px;
@@ -63,4 +75,29 @@
 
 .popup__save-button:hover {
   opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__container {
+    max-width: 430px;
+    left: calc(50% - 215px);
+    top: 20%;
+    width: 430px;
+    height: 330px;
+  }
+  .popup__close-button {
+    position: absolute;
+    top: -58px;
+    right: -48px;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 0;
+  }
+  .popup__close-svg {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    transform: scale(1);
+  }
 }

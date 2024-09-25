@@ -32,6 +32,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .photo-grid__card-button_like {

@@ -25,7 +25,20 @@
       <main class="content">
         <section class="popup">
           <div class="popup__container">
-            <button type="submit" class="popup__close-button">X</button>
+            <button type="submit" class="popup__close-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="58"
+                height="57"
+                fill="none"
+                class="popup__close-svg"
+              >
+                <path
+                  fill="#fff"
+                  d="M41.57 12.57 29 25.143 16.43 12.57l-3.143 3.143 12.57 12.57-12.57 12.571 3.142 3.143L29 31.427l12.57 12.57 3.144-3.142-12.571-12.57 12.57-12.572-3.142-3.142Z"
+                />
+              </svg>
+            </button>
             <form name="edit" class="popup__form">
               <h4 class="popup__title">Editar perfil</h4>
               <input
@@ -33,14 +46,14 @@
                 name="profile-name"
                 id="#profile-name"
                 placeholder="Nombre"
-                class="popup__input"
+                class="popup__input popup__input_name"
               />
               <input
                 type="text"
                 name="profile-about"
                 id="#profile-about"
                 placeholder="Acerca de mí"
-                class="popup__input"
+                class="popup__input popup__input_about"
               />
               <button type="submit" class="popup__save-button">Guardar</button>
             </form>
@@ -74,7 +87,6 @@
               <p class="profile__description">Explorador</p>
             </div>
           </div>
-
           <button class="profile__add-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -234,5 +246,6 @@
         <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
       </footer>
     </div>
+    <script src="scripts/script.js"></script>
   </body>
 </html>

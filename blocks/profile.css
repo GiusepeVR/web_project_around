@@ -34,12 +34,22 @@
 .profile__name {
   margin: 0 auto;
   margin-right: 10px;
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
 }
+
 .profile__description {
   margin: 0 auto;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .profile__edit-button {
+  position: relative;
   height: 18px;
   width: 18px;
   background-color: black;
@@ -48,8 +58,10 @@
 }
 
 .profile__edit-svg {
-  width: 7.5px;
-  height: 7.5px;
+  transform: scale(1.2);
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
 
 .profile__add-button {
@@ -103,5 +115,16 @@
 @media screen and (min-width: 1280px) {
   .profile {
     justify-content: space-between;
+  }
+  .profile__name {
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.14; /* 114.286% */
+  }
+  .profile__description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
   }
 }
