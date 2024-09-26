@@ -1,13 +1,13 @@
-let editProfileButton = document.querySelector(".profile__edit-button");
-let popUpElement = document.querySelector(".popup");
-let closePopupButton = document.querySelector(".popup__close-button");
+const editProfileButton = document.querySelector(".profile__edit-button");
+const popUpElement = document.querySelector(".popup");
+const closePopupButton = document.querySelector(".popup__close-button");
 
-let profileNameInput = document.querySelector(".popup__input_name");
-let profileAboutInput = document.querySelector(".popup__input_about");
+const profileNameInput = document.querySelector(".popup__input_name");
+const profileAboutInput = document.querySelector(".popup__input_about");
 
-let storedProfileName = document.querySelector(".profile__name");
-let storedProfileAbout = document.querySelector(".profile__description");
-let formElement = document.querySelector(".popup__form");
+const storedProfileName = document.querySelector(".profile__name");
+const storedProfileAbout = document.querySelector(".profile__description");
+const formElement = document.querySelector(".popup__form");
 
 function togglePopup() {
   popUpElement.classList.toggle("popup_opened");
@@ -15,23 +15,19 @@ function togglePopup() {
 }
 
 function renderInputTexts() {
-  let profileName = storedProfileName.innerHTML;
-  let profileAbout = storedProfileAbout.innerHTML;
+  let profileName = storedProfileName.textContent;
+  let profileAbout = storedProfileAbout.textContent;
   profileNameInput.value = profileName;
   profileAboutInput.value = profileAbout;
 }
 
-editProfileButton.addEventListener("click", togglePopup);
-closePopupButton.addEventListener("click", togglePopup);
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  let nameInput = document.querySelector(".popup__input_name");
-  let jobInput = document.querySelector(".popup__input_about");
-
-  storedProfileName.textContent = nameInput.value;
-  storedProfileAbout.textContent = jobInput.value;
+  storedProfileName.textContent = profileNameInput.value;
+  storedProfileAbout.textContent = profileAboutInput.value;
   togglePopup();
 }
 
+editProfileButton.addEventListener("click", togglePopup);
+closePopupButton.addEventListener("click", togglePopup);
 formElement.addEventListener("submit", handleProfileFormSubmit);

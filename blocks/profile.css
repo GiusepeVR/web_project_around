@@ -33,11 +33,11 @@
 
 .profile__name {
   margin: 0 auto;
-  margin-right: 10px;
   font-family: "Inter", "Arial", sans-serif;
   font-size: 22px;
   font-weight: 500;
   line-height: 1;
+  text-align: center;
 }
 
 .profile__description {
@@ -92,7 +92,9 @@
     flex-direction: row;
     justify-content: center;
   }
-
+  .profile__edit-button {
+    margin: 0 20px;
+  }
   .profile__add-button {
     max-width: 150px;
     margin: 36px 0;
