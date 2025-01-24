@@ -104,6 +104,16 @@ function createCard(nameValue, imageValue) {
   const newCard = cardTemplate.cloneNode(true);
   newCard.querySelector(".photo-grid__card-title").textContent = nameValue;
   newCard.querySelector(".photo-grid__card-image").src = imageValue;
+  newCard
+    .querySelector(".photo-grid__card-button_delete")
+    .addEventListener("click", function (evt) {
+      evt.target.closest.remove();
+    });
+  newCard
+    .querySelector(".photo-grid__card-button_like")
+    .addEventListener("click", function (evt) {
+      evt.target.classList.toggle("photo-grid__card-button_like_active");
+    });
   cardsSection.append(newCard);
 }
 

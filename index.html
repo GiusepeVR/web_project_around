@@ -147,7 +147,7 @@
             </form>
           </div>
         </section>
-        <section class="image-popup image-popup_opened" id="place-overlay">
+        <section class="image-popup" id="place-overlay">
           <div class="image-popup__container">
             <button
               type="submit"
@@ -226,22 +226,24 @@
     </div>
     <template id="card-template"
       ><div class="photo-grid__card">
+        <button class="photo-grid__card-button_delete">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="none"
+          >
+            <path
+              fill="#fff"
+              d="M4.458 19.142c.06.67.61 1.158 1.28 1.158H16.26c.67 0 1.22-.508 1.28-1.158L18.72 6.79H3.28l1.178 12.352ZM18.72 2.93h-5.14v-.65c0-.711-.569-1.28-1.28-1.28H9.72c-.711 0-1.28.569-1.28 1.28v.65H3.28C2.569 2.93 2 3.499 2 4.21c0 .711.569 1.28 1.28 1.28h15.44c.711 0 1.28-.569 1.28-1.28 0-.711-.569-1.28-1.28-1.28Z"
+            />
+          </svg>
+        </button>
+
         <img src="" alt="Landscape image" class="photo-grid__card-image" />
         <div class="photo-grid__card-bottom">
           <h3 class="photo-grid__card-title"></h3>
-          <button class="photo-grid__card-button_like">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="21"
-              height="19"
-              fill="none"
-            >
-              <path
-                fill="#000"
-                d="M19.376 9.786c2.165-2.243 2.165-5.884 0-8.104a5.415 5.415 0 0 0-7.845 0l-1.05 1.11-1.05-1.088C7.266-.56 3.751-.56 1.608 1.682.558 2.77 0 4.213 0 5.745 0 7.277.579 8.72 1.608 9.808L10.48 19l8.895-9.214ZM1.372 5.745c0-1.155.428-2.22 1.222-3.02.814-.843 1.864-1.265 2.915-1.265 1.05 0 2.1.422 2.915 1.265l2.057 2.11 2.058-2.132a4.026 4.026 0 0 1 5.83 0 4.327 4.327 0 0 1 1.222 3.02c0 1.154-.429 2.22-1.222 3.02l-7.888 8.192-7.887-8.17c-.772-.822-1.222-1.888-1.222-3.02Z"
-              />
-            </svg>
-          </button>
+          <button class="photo-grid__card-button_like"></button>
         </div>
       </div>
     </template>
