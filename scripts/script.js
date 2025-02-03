@@ -24,6 +24,24 @@ const popupSecondaryInput = document.querySelector(".popup__input_secondary");
 const closeGenericPopupButton = popupTemplate.querySelector(
   "#popup__generic-close-button"
 );
+const imagePopupTemplate = document.querySelector(
+  "#popup-image-template"
+).content;
+
+let selectedImage = "images/grid-picture-0.png";
+
+const imagePopupClone = imagePopupTemplate.cloneNode(true);
+mainSection.append(imagePopupClone);
+const imagePopup = document.querySelector("#image-overlay");
+const imagePopupImageTag = document.querySelector(".image-popup__img");
+const imagePopupImageLabel = document.querySelector(".image-popup__label");
+const imagePopupImageCloseButton = document.querySelector(
+  ".image-popup__close-button"
+);
+imagePopupImageCloseButton.addEventListener("click", function () {
+  toggleImagePopup();
+});
+imagePopupImageTag.src = selectedImage;
 
 const initialCards = [
   {
@@ -61,6 +79,10 @@ function togglePlacePopup() {
   placePopUpElement.classList.toggle("popup_opened");
 }
 
+function toggleImagePopup() {
+  imagePopup.classList.toggle("image-popup_opened");
+}
+
 function toggleGenericPopup(
   primaryPlaceHolder = "hola",
   secondaryPlaceHolder = "hola"
@@ -91,7 +113,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   storedProfileName.textContent = profileNameInput.value;
   storedProfileAbout.textContent = profileAboutInput.value;
-  togglePopup();
+  toggleUserPopup();
 }
 
 function renderInitialCards(array) {
@@ -107,19 +129,26 @@ function createCard(nameValue, imageValue) {
   newCard
     .querySelector(".photo-grid__card-button_delete")
     .addEventListener("click", function (evt) {
-      evt.target.closest.remove();
+      evt.target.parentElement.parentElement.parentElement.remove();
     });
   newCard
     .querySelector(".photo-grid__card-button_like")
     .addEventListener("click", function (evt) {
       evt.target.classList.toggle("photo-grid__card-button_like_active");
     });
+  newCard
+    .querySelector(".photo-grid__card-image")
+    .addEventListener("click", function (evt) {
+      imagePopupImageTag.src = imageValue;
+      imagePopupImageLabel.textContent = nameValue;
+      toggleImagePopup();
+      console.log(selectedImage);
+    });
   cardsSection.append(newCard);
 }
 
 editProfileButton.addEventListener("click", toggleUserPopup);
 addPlaceButton.addEventListener("click", togglePlacePopup);
-//addPlaceButton.addEventListener("click", toggleGenericPopup);
 closeUserPopupButton.addEventListener("click", toggleUserPopup);
 closeGenericPopupButton.addEventListener("click", toggleGenericPopup);
 closePlacePopupButton.addEventListener("click", togglePlacePopup);
