@@ -147,35 +147,34 @@
             </form>
           </div>
         </section>
-        <section class="image-popup" id="place-overlay">
-          <div class="image-popup__container">
-            <button
-              type="submit"
-              class="image-popup__close-button"
-              id="image-popup__close-button"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="58"
-                height="57"
-                fill="none"
-                class="popup__close-svg"
+        <template id="popup-image-template"
+          ><section class="image-popup" id="image-overlay">
+            <div class="image-popup__container">
+              <button
+                type="submit"
+                class="image-popup__close-button"
+                id="image-popup__close-button"
               >
-                <path
-                  fill="#fff"
-                  d="M41.57 12.57 29 25.143 16.43 12.57l-3.143 3.143 12.57 12.57-12.57 12.571 3.142 3.143L29 31.427l12.57 12.57 3.144-3.142-12.571-12.57 12.57-12.572-3.142-3.142Z"
-                />
-              </svg>
-            </button>
-            <div class="image-popup__frame">
-              <img
-                src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
-                alt="Landscape overlay"
-                class="image-popup__img"
-              />
-            </div>
-          </div>
-        </section>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="58"
+                  height="57"
+                  fill="none"
+                  class="popup__close-svg"
+                >
+                  <path
+                    fill="#fff"
+                    d="M41.57 12.57 29 25.143 16.43 12.57l-3.143 3.143 12.57 12.57-12.57 12.571 3.142 3.143L29 31.427l12.57 12.57 3.144-3.142-12.571-12.57 12.57-12.572-3.142-3.142Z"
+                  />
+                </svg>
+              </button>
+              <div class="image-popup__frame">
+                <img src="" alt="Landscape overlay" class="image-popup__img" />
+                <span class="image-popup__label"></span>
+              </div>
+            </div></section
+        ></template>
+
         <section class="profile" id="profile">
           <div class="profile__content">
             <img
