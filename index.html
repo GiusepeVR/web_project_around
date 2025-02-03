@@ -23,7 +23,7 @@
         <div class=""></div>
       </header>
       <main class="content">
-        <template id="popup-template">
+        <!--template id="popup-template">
           <section class="popup">
             <div class="popup__container">
               <button
@@ -66,7 +66,7 @@
               </form>
             </div>
           </section>
-        </template>
+        </template-->
         <section class="popup" id="user-popup">
           <div class="popup__container">
             <button type="submit" class="popup__close-button">
@@ -83,7 +83,7 @@
                 />
               </svg>
             </button>
-            <form name="edit" class="popup__form">
+            <form name="edit" class="popup__form" id="profile-form">
               <h4 class="popup__title">Editar perfil</h4>
               <input
                 type="text"
@@ -125,7 +125,7 @@
                 />
               </svg>
             </button>
-            <form name="edit" class="popup__form">
+            <form name="edit" class="popup__form" id="place-form">
               <h4 class="popup__title">Nuevo lugar</h4>
               <input
                 type="text"
@@ -133,6 +133,7 @@
                 id="#place-name"
                 placeholder="Título"
                 class="popup__input popup__input_place"
+                required
               />
               <input
                 type="text"
@@ -140,6 +141,7 @@
                 id="#place-image-src"
                 placeholder="Enlace a la imagen"
                 class="popup__input popup__input_link"
+                required
               />
               <button type="submit" class="popup__save-button save-place">
                 Guardar

@@ -13,17 +13,22 @@ const placeImageLinkInput = document.querySelector(".popup__input_link");
 
 const storedProfileName = document.querySelector(".profile__name");
 const storedProfileAbout = document.querySelector(".profile__description");
-const formElement = document.querySelector(".popup__form");
+/*const formE.lement = document.querySelector(".popup__form");*/
+
+const profileFormElement = document.querySelector("#profile-form");
+const placeFormElement = document.querySelector("#place-form");
+
 const cardsSection = document.querySelector(".photo-grid");
 const mainSection = document.querySelector(".content");
 
 const cardTemplate = document.querySelector("#card-template").content;
-const popupTemplate = document.querySelector("#popup-template").content;
+/*const popupTemplate = document.querySelector("#popup-template").content;
 const popupPrimaryInput = document.querySelector(".popup__input_primary");
 const popupSecondaryInput = document.querySelector(".popup__input_secondary");
 const closeGenericPopupButton = popupTemplate.querySelector(
   "#popup__generic-close-button"
-);
+);*/
+
 const imagePopupTemplate = document.querySelector(
   "#popup-image-template"
 ).content;
@@ -69,6 +74,8 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
+
+const reversedInitialCards = initialCards.reverse();
 
 function toggleUserPopup() {
   userPopUpElement.classList.toggle("popup_opened");
@@ -116,6 +123,14 @@ function handleProfileFormSubmit(evt) {
   toggleUserPopup();
 }
 
+function handlePlaceFormSubmit(evt) {
+  evt.preventDefault();
+  let userInputImageLink = placeImageLinkInput.value;
+  let userInputPlaceName = placeNameInput.value;
+  createCard(userInputPlaceName, userInputImageLink);
+  togglePlacePopup();
+}
+
 function renderInitialCards(array) {
   array.forEach((element) => {
     createCard(element.name, element.link);
@@ -144,13 +159,14 @@ function createCard(nameValue, imageValue) {
       toggleImagePopup();
       console.log(selectedImage);
     });
-  cardsSection.append(newCard);
+  cardsSection.prepend(newCard);
 }
 
 editProfileButton.addEventListener("click", toggleUserPopup);
 addPlaceButton.addEventListener("click", togglePlacePopup);
 closeUserPopupButton.addEventListener("click", toggleUserPopup);
-closeGenericPopupButton.addEventListener("click", toggleGenericPopup);
+/*closeGenericPopupButton.addEventListener("click", toggleGenericPopup);*/
 closePlacePopupButton.addEventListener("click", togglePlacePopup);
-formElement.addEventListener("submit", handleProfileFormSubmit);
-renderInitialCards(initialCards);
+profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+placeFormElement.addEventListener("submit", handlePlaceFormSubmit);
+renderInitialCards(reversedInitialCards);

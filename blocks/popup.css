@@ -43,6 +43,10 @@
   transform: scale(0.7);
 }
 
+.popup__close-svg:hover {
+  opacity: 60%;
+}
+
 .popup__form {
   display: flex;
   flex-direction: column;

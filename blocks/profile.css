@@ -64,6 +64,10 @@
   right: 4px;
 }
 
+.profile__edit-button:hover {
+  opacity: 60%;
+}
+
 .profile__add-button {
   width: calc(100% - 38px);
   margin: 36px 0;
@@ -72,6 +76,10 @@
   border-radius: 2px;
   border: solid 2px white;
   cursor: pointer;
+}
+
+.profile__add-button:hover {
+  opacity: 60%;
 }
 
 @media screen and (min-width: 768px) {
