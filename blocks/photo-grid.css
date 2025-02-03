@@ -46,6 +46,10 @@
   border: 0;
 }
 
+.photo-grid__card-button_like:hover {
+  opacity: 60%;
+}
+
 .photo-grid__card-button_like_active {
   background: url(../images/filled.svg) center no-repeat;
   width: 22px;
@@ -60,7 +64,9 @@
   background-color: transparent;
   border: 0;
 }
-
+.photo-grid__card-button_delete:hover {
+  opacity: 60%;
+}
 @media screen and (min-width: 768px) {
   .photo-grid {
     width: 100%;
