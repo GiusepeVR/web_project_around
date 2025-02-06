@@ -66,9 +66,7 @@ const initialCards = [
     name: "Lago di Braies",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
-];
-
-const reversedInitialCards = initialCards.reverse();
+].reverse();
 
 function toggleUserPopup() {
   userPopUpElement.classList.toggle("popup_opened");
@@ -81,25 +79,6 @@ function togglePlacePopup() {
 
 function toggleImagePopup() {
   imagePopup.classList.toggle("image-popup_opened");
-}
-
-function toggleGenericPopup(
-  primaryPlaceHolder = "hola",
-  secondaryPlaceHolder = "hola"
-) {
-  const newPopup = popupTemplate.cloneNode(true);
-  const sectionPopup = popupTemplate.querySelector(".popup");
-  const closePopup = popupTemplate.querySelector(
-    "#popup__generic-close-button"
-  );
-
-  closePopup.addEventListener("click", toggleUserPopup);
-  sectionPopup.classList.toggle("popup_opened");
-  newPopup.querySelector(".popup__input_primary").placeholder =
-    primaryPlaceHolder;
-  newPopup.querySelector(".popup__input_secondary").placeholder =
-    secondaryPlaceHolder;
-  mainSection.prepend(newPopup);
 }
 
 function renderInputTexts() {
@@ -164,4 +143,4 @@ closeUserPopupButton.addEventListener("click", toggleUserPopup);
 closePlacePopupButton.addEventListener("click", togglePlacePopup);
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 placeFormElement.addEventListener("submit", handlePlaceFormSubmit);
-renderInitialCards(reversedInitialCards);
+renderInitialCards(initialCards);
