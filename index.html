@@ -25,7 +25,11 @@
       <main class="content">
         <section class="popup" id="user-popup">
           <div class="popup__container">
-            <button type="submit" class="popup__close-button">
+            <button
+              type="submit"
+              class="popup__close-button"
+              id="user-popup__close-button"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="58"
@@ -47,6 +51,9 @@
                 id="#profile-name"
                 placeholder="Nombre"
                 class="popup__input popup__input_name"
+                required
+                minlength="2"
+                maxlength="40"
               />
               <input
                 type="text"
@@ -54,6 +61,9 @@
                 id="#profile-about"
                 placeholder="Acerca de mí"
                 class="popup__input popup__input_about"
+                required
+                minlength="2"
+                maxlength="200"
               />
               <button type="submit" class="popup__save-button save-user">
                 Guardar
@@ -66,7 +76,7 @@
             <button
               type="submit"
               class="popup__close-button"
-              id="popup__close-button"
+              id="place-popup__close-button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,9 +100,11 @@
                 placeholder="Título"
                 class="popup__input popup__input_place"
                 required
+                minlength="2"
+                maxlength="30"
               />
               <input
-                type="text"
+                type="url"
                 name="place-image-src"
                 id="#place-image-src"
                 placeholder="Enlace a la imagen"
