@@ -2,8 +2,12 @@ const editProfileButton = document.querySelector(".profile__edit-button");
 const addPlaceButton = document.querySelector(".profile__add-button");
 const userPopUpElement = document.querySelector("#user-popup");
 const placePopUpElement = document.querySelector("#place-popup");
-const closeUserPopupButton = document.querySelector(".popup__close-button");
-const closePlacePopupButton = document.querySelector("#popup__close-button");
+const closeUserPopupButton = document.querySelector(
+  "#user-popup__close-button"
+);
+const closePlacePopupButton = document.querySelector(
+  "#place-popup__close-button"
+);
 
 const profileNameInput = document.querySelector(".popup__input_name");
 const profileAboutInput = document.querySelector(".popup__input_about");
@@ -35,6 +39,9 @@ const imagePopupImageLabel = document.querySelector(".image-popup__label");
 const imagePopupImageCloseButton = document.querySelector(
   ".image-popup__close-button"
 );
+
+const popupNodeList = document.querySelectorAll(".image-popup, .popup");
+const popupList = Array.from(popupNodeList);
 
 imagePopupImageCloseButton.addEventListener("click", function () {
   toggleImagePopup();
@@ -81,6 +88,20 @@ function toggleImagePopup() {
   imagePopup.classList.toggle("image-popup_opened");
 }
 
+function genericPopupToggle() {
+  switch (true) {
+    case userPopUpElement.classList.contains("popup_opened"):
+      toggleUserPopup();
+      break;
+    case placePopUpElement.classList.contains("popup_opened"):
+      togglePlacePopup();
+      break;
+    case imagePopup.classList.contains("image-popup_opened"):
+      toggleImagePopup();
+      break;
+  }
+}
+
 function renderInputTexts() {
   const profileName = storedProfileName.textContent;
   const profileAbout = storedProfileAbout.textContent;
@@ -114,7 +135,6 @@ function createCard(nameValue, imageValue) {
     .cloneNode(true)
     .content.querySelector(".photo-grid__card");
   const cardButton = newCard.querySelector(".photo-grid__card-button_delete");
-  console.log(newCard);
   newCard.querySelector(".photo-grid__card-title").textContent = nameValue;
 
   newCard.querySelector(".photo-grid__card-image").src = imageValue;
@@ -144,3 +164,23 @@ closePlacePopupButton.addEventListener("click", togglePlacePopup);
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 placeFormElement.addEventListener("submit", handlePlaceFormSubmit);
 renderInitialCards(initialCards);
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.keyCode === 27) {
+    genericPopupToggle();
+  }
+});
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.keyCode === 27) {
+    genericPopupToggle();
+  }
+});
+
+popupList.forEach((popup) =>
+  popup.addEventListener("click", function (evt) {
+    if (evt.target === evt.currentTarget) {
+      genericPopupToggle();
+    }
+  })
+);
