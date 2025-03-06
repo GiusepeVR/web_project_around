@@ -29,20 +29,7 @@
               type="submit"
               class="popup__close-button"
               id="user-popup__close-button"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="58"
-                height="57"
-                fill="none"
-                class="popup__close-svg"
-              >
-                <path
-                  fill="#fff"
-                  d="M41.57 12.57 29 25.143 16.43 12.57l-3.143 3.143 12.57 12.57-12.57 12.571 3.142 3.143L29 31.427l12.57 12.57 3.144-3.142-12.571-12.57 12.57-12.572-3.142-3.142Z"
-                />
-              </svg>
-            </button>
+            ></button>
             <form name="edit" class="popup__form" id="profile-form">
               <fieldset class="popup__fieldset" id="profile-fieldset">
                 <h4 class="popup__title">Editar perfil</h4>
@@ -52,6 +39,7 @@
                   id="profile-name"
                   placeholder="Nombre"
                   class="popup__input popup__input_name"
+                  value="Jacques Cousteau"
                   required
                   minlength="2"
                   maxlength="40"
@@ -63,12 +51,13 @@
                   id="profile-about"
                   placeholder="Acerca de mí"
                   class="popup__input popup__input_about"
+                  value="Explorador"
                   required
                   minlength="2"
                   maxlength="200"
                 />
                 <span class="popup__input-error profile-about-error"></span>
-                <button type="submit" class="popup__save-button save-user">
+                <button type="submit" class="popup__button save-user">
                   Guardar
                 </button>
               </fieldset>
@@ -81,20 +70,7 @@
               type="submit"
               class="popup__close-button"
               id="place-popup__close-button"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="58"
-                height="57"
-                fill="none"
-                class="popup__close-svg"
-              >
-                <path
-                  fill="#fff"
-                  d="M41.57 12.57 29 25.143 16.43 12.57l-3.143 3.143 12.57 12.57-12.57 12.571 3.142 3.143L29 31.427l12.57 12.57 3.144-3.142-12.571-12.57 12.57-12.572-3.142-3.142Z"
-                />
-              </svg>
-            </button>
+            ></button>
             <form name="edit" class="popup__form" id="place-form">
               <fieldset class="popup__fieldset" id="place-fieldset">
                 <h4 class="popup__title">Nuevo lugar</h4>
@@ -118,7 +94,7 @@
                   required
                 />
                 <span class="popup__input-error place-image-src-error"></span>
-                <button type="submit" class="popup__save-button save-place">
+                <button type="submit" class="popup__button save-place">
                   Guardar
                 </button>
               </fieldset>
@@ -132,20 +108,7 @@
                 type="submit"
                 class="image-popup__close-button"
                 id="image-popup__close-button"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="58"
-                  height="57"
-                  fill="none"
-                  class="popup__close-svg"
-                >
-                  <path
-                    fill="#fff"
-                    d="M41.57 12.57 29 25.143 16.43 12.57l-3.143 3.143 12.57 12.57-12.57 12.571 3.142 3.143L29 31.427l12.57 12.57 3.144-3.142-12.571-12.57 12.57-12.572-3.142-3.142Z"
-                  />
-                </svg>
-              </button>
+              ></button>
               <div class="image-popup__frame">
                 <img src="" alt="Landscape overlay" class="image-popup__img" />
                 <span class="image-popup__label"></span>
@@ -163,37 +126,12 @@
             <div class="profile__labels">
               <div class="profile__title">
                 <h2 class="profile__name">Jacques Cousteau</h2>
-                <button class="profile__edit-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="8"
-                    fill="none"
-                    class="profile__edit-svg"
-                  >
-                    <path
-                      fill="#fff"
-                      d="M7.5.996 1.953 6.575l-.99-1.01L6.494 0 7.5.996ZM0 7.5l1.472-.441-1.033-.996L0 7.5Z"
-                    />
-                  </svg>
-                </button>
+                <button class="profile__edit-button"></button>
               </div>
               <p class="profile__description">Explorador</p>
             </div>
           </div>
-          <button class="profile__add-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="none"
-            >
-              <path
-                fill="#fff"
-                d="M16 7.111H8.889V0H7.11v7.111H0V8.89h7.111V16H8.89V8.889H16V7.11Z"
-              />
-            </svg>
-          </button>
+          <button class="profile__add-button"></button>
         </section>
         <section class="photo-grid"></section>
       </main>
@@ -203,19 +141,7 @@
     </div>
     <template id="card-template"
       ><div class="photo-grid__card">
-        <button class="photo-grid__card-button_delete">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            fill="none"
-          >
-            <path
-              fill="#fff"
-              d="M4.458 19.142c.06.67.61 1.158 1.28 1.158H16.26c.67 0 1.22-.508 1.28-1.158L18.72 6.79H3.28l1.178 12.352ZM18.72 2.93h-5.14v-.65c0-.711-.569-1.28-1.28-1.28H9.72c-.711 0-1.28.569-1.28 1.28v.65H3.28C2.569 2.93 2 3.499 2 4.21c0 .711.569 1.28 1.28 1.28h15.44c.711 0 1.28-.569 1.28-1.28 0-.711-.569-1.28-1.28-1.28Z"
-            />
-          </svg>
-        </button>
+        <button class="photo-grid__card-button_delete"></button>
 
         <img src="" alt="Landscape image" class="photo-grid__card-image" />
         <div class="photo-grid__card-bottom">

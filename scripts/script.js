@@ -29,8 +29,6 @@ const imagePopupTemplate = document.querySelector(
   "#popup-image-template"
 ).content;
 
-let selectedImage = "images/grid-picture-0.png";
-
 const imagePopupClone = imagePopupTemplate.cloneNode(true);
 mainSection.append(imagePopupClone);
 const imagePopup = document.querySelector("#image-overlay");
@@ -46,7 +44,6 @@ const popupList = Array.from(popupNodeList);
 imagePopupImageCloseButton.addEventListener("click", function () {
   toggleImagePopup();
 });
-imagePopupImageTag.src = selectedImage;
 
 const initialCards = [
   {
@@ -118,8 +115,8 @@ function handleProfileFormSubmit(evt) {
 
 function handlePlaceFormSubmit(evt) {
   evt.preventDefault();
-  let userInputImageLink = placeImageLinkInput.value;
-  let userInputPlaceName = placeNameInput.value;
+  const userInputImageLink = placeImageLinkInput.value;
+  const userInputPlaceName = placeNameInput.value;
   createCard(userInputPlaceName, userInputImageLink);
   togglePlacePopup();
 }
@@ -152,7 +149,6 @@ function createCard(nameValue, imageValue) {
       imagePopupImageTag.src = imageValue;
       imagePopupImageLabel.textContent = nameValue;
       toggleImagePopup();
-      console.log(selectedImage);
     });
   cardsSection.prepend(newCard);
 }
