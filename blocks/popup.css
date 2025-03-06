@@ -32,7 +32,6 @@
   right: -12px;
   height: 20px;
   width: 20px;
-  background-color: transparent;
   border: 0;
 }
 
@@ -105,7 +104,7 @@
   visibility: visible;
 }
 
-.popup__save-button {
+.popup__button {
   margin: 24px 0 0 0;
   padding: 0;
   width: 100%;
@@ -116,11 +115,23 @@
   border: none;
 }
 
-.popup__save-button:hover {
+.popup__button:hover {
   opacity: 0.8;
 }
 
-.popup__save-button:disabled {
+.popup__button_disabled {
+  margin: 46px 0 0 0;
+  padding: 0;
+  width: 100%;
+  min-height: 46px;
+  background-color: transparent;
+  color: #000;
+  border-radius: 2px;
+  border: 1px solid #000;
+  opacity: 0.2;
+}
+
+.popup__button_disabled:hover {
   margin: 46px 0 0 0;
   padding: 0;
   width: 100%;
@@ -144,9 +155,9 @@
     position: absolute;
     top: -58px;
     right: -48px;
-    height: 20px;
-    width: 20px;
-    background-color: transparent;
+    height: 56px;
+    width: 56px;
+    background: url(../images/popup-close.svg) center no-repeat;
     border: 0;
   }
   .popup__close-svg {
