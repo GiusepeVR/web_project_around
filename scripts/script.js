@@ -12,6 +12,12 @@ const closePlacePopupButton = document.querySelector(
   "#place-popup__close-button"
 );
 
+const profileNameInput = document.querySelector(".popup__input_name");
+const profileAboutInput = document.querySelector(".popup__input_about");
+
+const placeNameInput = document.querySelector(".popup__input_place");
+const placeImageLinkInput = document.querySelector(".popup__input_link");
+
 const storedProfileName = document.querySelector(".profile__name");
 const storedProfileAbout = document.querySelector(".profile__description");
 
