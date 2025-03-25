@@ -1,5 +1,5 @@
 export default class Card {
-  constructor(cardText, cardImageLink, cardSelector) {
+  constructor(cardText, cardImageLink, cardSelector, handleCardClick) {
     this._text = cardText;
     this._imageLink = cardImageLink;
     this._cardSelector = cardSelector;
@@ -16,6 +16,7 @@ export default class Card {
     this._cardTitle = this._cardElement.querySelector(
       ".photo-grid__card-title"
     );
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -46,7 +47,7 @@ export default class Card {
 
   _setEventListeners() {
     this._cardImage.addEventListener("click", () => {
-      this._handleOpenImagePopup();
+      this._handleCardClick();
     });
     this._deleteButton.addEventListener("click", () => {
       this._handleCardDelete();

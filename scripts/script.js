@@ -1,165 +1,69 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./Card.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
+import Section from "../components/Section.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupwithImage.js";
+import UserInfo from "../components/UserInfo.js";
 
-const editProfileButton = document.querySelector(".profile__edit-button");
-const addPlaceButton = document.querySelector(".profile__add-button");
-const userPopUpElement = document.querySelector("#user-popup");
-const placePopUpElement = document.querySelector("#place-popup");
-const closeUserPopupButton = document.querySelector(
-  "#user-popup__close-button"
+import {
+  initialCards,
+  localSettings,
+  addPlaceButton,
+  editProfileButton,
+} from "../utils/constants.js";
+
+const imageOverlay = new PopupWithImage(".image-popup");
+imageOverlay.setEventListeners();
+
+const imageCardList = new Section(
+  {
+    items: initialCards,
+    renderer: (element) => {
+      const card = new Card(
+        element.name,
+        element.link,
+        "#card-template",
+        () => {
+          imageOverlay.open(card._imageLink, card._text);
+        }
+      );
+      const cardElement = card.createCard(card._getTemplate());
+      imageCardList.addItem(cardElement);
+    },
+  },
+  ".photo-grid"
 );
-const closePlacePopupButton = document.querySelector(
-  "#place-popup__close-button"
-);
+imageCardList.setItems();
 
-const profileNameInput = document.querySelector(".popup__input_name");
-const profileAboutInput = document.querySelector(".popup__input_about");
-
-const placeNameInput = document.querySelector(".popup__input_place");
-const placeImageLinkInput = document.querySelector(".popup__input_link");
-
-const storedProfileName = document.querySelector(".profile__name");
-const storedProfileAbout = document.querySelector(".profile__description");
-
-const profileFormElement = document.querySelector("#profile-form");
-const placeFormElement = document.querySelector("#place-form");
-
-const cardsSection = document.querySelector(".photo-grid");
-const mainSection = document.querySelector(".content");
-
-const imagePopupTemplate = document.querySelector(
-  "#popup-image-template"
-).content;
-
-const imagePopupClone = imagePopupTemplate.cloneNode(true);
-mainSection.append(imagePopupClone);
-const imagePopup = document.querySelector("#image-overlay");
-const imagePopupImageCloseButton = document.querySelector(
-  ".image-popup__close-button"
-);
-
-const popupNodeList = document.querySelectorAll(".image-popup, .popup");
-const popupList = Array.from(popupNodeList);
-
-imagePopupImageCloseButton.addEventListener("click", function () {
-  toggleImagePopup();
-});
-
-const initialCards = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-  },
-].reverse();
-
-function toggleUserPopup() {
-  userPopUpElement.classList.toggle("popup_opened");
-}
-
-function togglePlacePopup() {
-  placePopUpElement.classList.toggle("popup_opened");
-}
-
-function toggleImagePopup() {
-  imagePopup.classList.toggle("image-popup_opened");
-}
-
-function genericPopupToggle() {
-  switch (true) {
-    case userPopUpElement.classList.contains("popup_opened"):
-      userPopUpElement.classList.toggle("popup_opened");
-      break;
-    case placePopUpElement.classList.contains("popup_opened"):
-      placePopUpElement.classList.toggle("popup_opened");
-      break;
-    case imagePopup.classList.contains("image-popup_opened"):
-      imagePopup.classList.toggle("image-popup_opened");
-      break;
-  }
-}
-
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  storedProfileName.textContent = profileNameInput.value;
-  storedProfileAbout.textContent = profileAboutInput.value;
-  toggleUserPopup();
-}
-
-function handlePlaceFormSubmit(evt) {
-  evt.preventDefault();
-  const userInputImageLink = placeImageLinkInput.value;
-  const userInputPlaceName = placeNameInput.value;
-  prependCard(userInputPlaceName, userInputImageLink);
-  togglePlacePopup();
-}
-
-editProfileButton.addEventListener("click", toggleUserPopup);
-addPlaceButton.addEventListener("click", togglePlacePopup);
-closeUserPopupButton.addEventListener("click", toggleUserPopup);
-closePlacePopupButton.addEventListener("click", togglePlacePopup);
-profileFormElement.addEventListener("submit", handleProfileFormSubmit);
-placeFormElement.addEventListener("submit", handlePlaceFormSubmit);
-
-document.addEventListener("keydown", function (evt) {
-  if (evt.keyCode === 27) {
-    genericPopupToggle();
-  }
-});
-
-document.addEventListener("keydown", function (evt) {
-  if (evt.keyCode === 27) {
-    genericPopupToggle();
-  }
-});
-
-popupList.forEach((popup) =>
-  popup.addEventListener("click", function (evt) {
-    if (evt.target === evt.currentTarget) {
-      genericPopupToggle();
-    }
-  })
-);
-
-function prependCard(title, imageLink) {
-  const card = new Card(title, imageLink, "#card-template");
-  cardsSection.prepend(card.createCard());
-}
-
-initialCards.forEach((element) => {
-  prependCard(element.name, element.link);
-});
-
-const localSettings = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-};
-
-const profileValidator = new FormValidator(localSettings, profileFormElement);
-const cardValidator = new FormValidator(localSettings, placeFormElement);
-
+const profileValidator = new FormValidator(localSettings, "#user-popup");
 profileValidator.enableValidation();
-cardValidator.enableValidation();
+
+const placeValidator = new FormValidator(localSettings, "#place-popup");
+placeValidator.enableValidation();
+
+const profileForm = new PopupWithForm("#user-popup", (data) => {
+  const info = new UserInfo({
+    userNameSelector: ".profile__name",
+    userJobSelector: ".profile__description",
+  });
+  info.getUserInfo();
+  info.setUserInfo(data.name, data.about);
+});
+profileForm.setEventListeners();
+
+const placeForm = new PopupWithForm("#place-popup", (data) => {
+  const card = new Card(data.title, data.link, "#card-template", () => {
+    imageOverlay.open(card._imageLink, card._text);
+  });
+  const cardElement = card.createCard(card._getTemplate());
+  imageCardList.addItem(cardElement);
+});
+placeForm.setEventListeners();
+
+editProfileButton.addEventListener("click", () => {
+  profileForm.open();
+});
+
+addPlaceButton.addEventListener("click", () => {
+  placeForm.open();
+});

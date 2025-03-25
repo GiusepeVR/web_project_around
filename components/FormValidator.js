@@ -1,6 +1,7 @@
 export default class FormValidator {
   constructor(settings, formElement) {
     this._formSelector = settings.formSelector;
+    this._formElement = document.querySelector(formElement);
   }
 
   _showInputError = (formElement, inputElement, errorMessage) => {
@@ -38,7 +39,6 @@ export default class FormValidator {
   };
 
   _toggleButtonState = (inputList, buttonElement) => {
-    console.log(this._hasInvalidInput(inputList));
     if (this._hasInvalidInput(inputList)) {
       buttonElement.classList.add("popup__button_disabled");
     } else {
