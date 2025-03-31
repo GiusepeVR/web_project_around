@@ -46,8 +46,8 @@ const profileForm = new PopupWithForm("#user-popup", (data) => {
     userNameSelector: ".profile__name",
     userJobSelector: ".profile__description",
   });
-  info.getUserInfo();
   info.setUserInfo(data.name, data.about);
+  info.getUserInfo();
 });
 profileForm.setEventListeners();
 
@@ -57,6 +57,7 @@ const placeForm = new PopupWithForm("#place-popup", (data) => {
   });
   const cardElement = card.createCard(card._getTemplate());
   imageCardList.addItem(cardElement);
+  placeForm.reset();
 });
 placeForm.setEventListeners();
 
