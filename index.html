@@ -23,6 +23,24 @@
         <div class=""></div>
       </header>
       <main class="content">
+        <section class="popup" id="delete-popup">
+          <div class="popup__container">
+            <button
+              type="submit"
+              class="popup__close-button"
+              id="user-popup__close-button"
+            ></button>
+            <form name="edit" class="popup__form" id="delete-form">
+              <fieldset class="popup__fieldset" id="profile-fieldset">
+                <h4 class="popup__title">¿Estás seguro/a?</h4>
+
+                <button type="submit" class="popup__button save-user">
+                  Sí
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </section>
         <section class="popup" id="user-popup">
           <div class="popup__container">
             <button
@@ -124,10 +142,10 @@
             />
             <div class="profile__labels">
               <div class="profile__title">
-                <h2 class="profile__name">Jacques Cousteau</h2>
+                <h2 class="profile__name"></h2>
                 <button class="profile__edit-button"></button>
               </div>
-              <p class="profile__description">Explorador</p>
+              <p class="profile__description"></p>
             </div>
           </div>
           <button class="profile__add-button"></button>
