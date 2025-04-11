@@ -48,12 +48,8 @@ export default class Card {
     imagePopup.classList.toggle("image-popup_opened");
   }
 
-  _handleCardDelete(handler, confirmation) {
-    handler;
-    if (confirmation) {
-      this._cardElement.remove();
-      this._handleAsyncRemoval();
-    }
+  _handleCardDelete() {
+    this._handleAsyncRemoval();
   }
 
   _handleLikeButton() {
@@ -85,5 +81,9 @@ export default class Card {
     this._cardTitle.textContent = this._text;
     this._setLike();
     return this._cardElement;
+  }
+
+  removeCard() {
+    this._cardElement.remove();
   }
 }

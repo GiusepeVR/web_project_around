@@ -20,9 +20,9 @@ export default class Api {
     return this._fetchData("/users/me", "PATCH", userInfo);
   }
 
-  updateUserAvatar(userImage) {
-    return this._fetchData("/users/me/avatar", "PATCH", userImage);
-  }
+  // updateUserAvatar(userImage) {
+  //   return this._fetchData("/users/me/avatar", "PATCH", userImage);
+  // }
 
   getInitialCards() {
     return this._fetchData("/cards");

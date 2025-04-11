@@ -14,3 +14,6 @@ export const editProfileButton = document.querySelector(
 
 export const profileName = document.querySelector(".profile__name");
 export const profileJobName = document.querySelector(".profile__description");
+
+export const nameInput = document.querySelector(".popup__input_name");
+export const jobInput = document.querySelector(".popup__input_about");

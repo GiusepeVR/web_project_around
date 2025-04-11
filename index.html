@@ -24,17 +24,30 @@
       </header>
       <main class="content">
         <section class="popup" id="delete-popup">
-          <div class="popup__container">
+          <div class="popup__container popup__container--confirmation">
             <button
               type="submit"
               class="popup__close-button"
               id="user-popup__close-button"
             ></button>
             <form name="edit" class="popup__form" id="delete-form">
-              <fieldset class="popup__fieldset" id="profile-fieldset">
-                <h4 class="popup__title">¿Estás seguro/a?</h4>
-
-                <button type="submit" class="popup__button save-user">
+              <fieldset
+                class="popup__fieldset popup__fieldset--confirmation"
+                id="popup-fieldset"
+              >
+                <h4 class="popup__title popup__title--confirmation">
+                  ¿Estás seguro/a?
+                </h4>
+                <input
+                  class="popup__input popup__input--hidden"
+                  type="text"
+                  value="true"
+                  name="delete"
+                />
+                <button
+                  type="submit"
+                  class="popup__button popup__button--confirmation"
+                >
                   Sí
                 </button>
               </fieldset>
@@ -57,7 +70,7 @@
                   id="profile-name"
                   placeholder="Nombre"
                   class="popup__input popup__input_name"
-                  value="Jacques Cousteau"
+                  value="  "
                   required
                   minlength="2"
                   maxlength="40"
@@ -69,7 +82,7 @@
                   id="profile-about"
                   placeholder="Acerca de mí"
                   class="popup__input popup__input_about"
-                  value="Explorador"
+                  value="  "
                   required
                   minlength="2"
                   maxlength="200"
@@ -127,12 +140,11 @@
               id="image-popup__close-button"
             ></button>
             <div class="image-popup__frame">
-              <img src="" alt="Landscape overlay" class="image-popup__img" />
+              <img src="#" alt="Landscape overlay" class="image-popup__img" />
               <span class="image-popup__label"></span>
             </div>
           </div>
         </section>
-
         <section class="profile" id="profile">
           <div class="profile__content">
             <img
