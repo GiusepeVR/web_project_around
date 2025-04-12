@@ -25,7 +25,6 @@ const cardSection = new Section(
   {
     items: [],
     renderer: (element) => {
-      console.log(element);
       const card = new Card(
         element.name,
         element.link,
@@ -38,12 +37,10 @@ const cardSection = new Section(
           const cardDeleteWarning = new PopupWithForm(
             "#delete-popup",
             (value) => {
-              console.log(value);
               if (value.delete === "true") {
                 api
                   .deleteCard(element._id)
                   .then((res) => {
-                    console.log(res);
                     card.removeCard();
                   })
                   .catch((err) => {
@@ -56,12 +53,9 @@ const cardSection = new Section(
           cardDeleteWarning.open();
         },
         () =>
-          api
-            .handleCardLike(element._id, element.isLiked)
-            .then((res) => console.log(res))
-            .catch((err) => {
-              console.log(err);
-            })
+          api.handleCardLike(element._id, element.isLiked).catch((err) => {
+            console.log(err);
+          })
       );
       const cardElement = card.createCard(card._getTemplate());
       cardSection.addItem(cardElement);
@@ -98,9 +92,7 @@ const info = new UserInfo({
 const profileForm = new PopupWithForm("#user-popup", (data) => {
   info.getUserInfo();
   info.setUserInfo(data.name, data.about);
-  api
-    .updateUserData({ name: data.name, about: data.about })
-    .then((res) => console.log(res));
+  api.updateUserData({ name: data.name, about: data.about });
 });
 profileForm.setEventListeners();
 
@@ -115,12 +107,10 @@ const placeForm = new PopupWithForm("#place-popup", (data) => {
     },
     () => {
       const cardDeleteWarning = new PopupWithForm("#delete-popup", (value) => {
-        console.log(value);
         if (value.delete === "true") {
           api
             .deleteCard(cardElement._id)
             .then((res) => {
-              console.log(res);
               card.removeCard();
             })
             .catch((err) => {
@@ -131,25 +121,15 @@ const placeForm = new PopupWithForm("#place-popup", (data) => {
       cardDeleteWarning.setEventListeners();
       cardDeleteWarning.open();
     },
-    () =>
-      api
-        .handleCardLike(element._id, element.isLiked)
-        .then((res) => console.log(res))
+    () => api.handleCardLike(element._id, element.isLiked)
   );
   const cardElement = card.createCard(card._getTemplate());
   cardSection.addItem(cardElement);
-  api
-    .addCard({
-      isLiked: false,
-      name: data.title,
-      link: data.link,
-    })
-    .then((res) => {
-      if (res.ok) {
-        console.log(res);
-        console.log("Card submitted succesfully");
-      }
-    });
+  api.addCard({
+    isLiked: false,
+    name: data.title,
+    link: data.link,
+  });
   placeForm.reset();
 });
 placeForm.setEventListeners();
@@ -165,7 +145,6 @@ addPlaceButton.addEventListener("click", () => {
 api
   .getUserData()
   .then((data) => {
-    console.log(data);
     info.setUserInfo(data.name, data.about, data.avatar);
     nameInput.value = data.name;
     jobInput.value = data.about;
@@ -177,13 +156,9 @@ api
 
 const avatarForm = new PopupWithForm("#avatar-popup", (values) => {
   info._userProfilePicture.src = values.avatar;
-  console.log(info.getUserInfo());
-  api
-    .updateUserAvatar({ avatar: values.avatar })
-    .then((res) => console.log(res))
-    .catch((err) => {
-      console.log(err);
-    });
+  api.updateUserAvatar({ avatar: values.avatar }).catch((err) => {
+    console.log(err);
+  });
 });
 avatarForm.setEventListeners();
 
