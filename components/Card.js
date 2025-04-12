@@ -1,8 +1,17 @@
 export default class Card {
-  constructor(cardText, cardImageLink, cardSelector, handleCardClick) {
+  constructor(
+    cardText,
+    cardImageLink,
+    cardSelector,
+    isLiked,
+    handleCardClick,
+    handleAsyncRemoval,
+    handleAsyncCardLike
+  ) {
     this._text = cardText;
     this._imageLink = cardImageLink;
     this._cardSelector = cardSelector;
+    this._isLiked = isLiked;
     this._cardElement = this._getTemplate();
     this._deleteButton = this._cardElement.querySelector(
       ".photo-grid__card-button_delete"
@@ -17,6 +26,8 @@ export default class Card {
       ".photo-grid__card-title"
     );
     this._handleCardClick = handleCardClick;
+    this._handleAsyncRemoval = handleAsyncRemoval;
+    this._handleAsyncLike = handleAsyncCardLike;
   }
 
   _getTemplate() {
@@ -38,11 +49,18 @@ export default class Card {
   }
 
   _handleCardDelete() {
-    this._cardElement.remove();
+    this._handleAsyncRemoval();
   }
 
   _handleLikeButton() {
     this._likeButton.classList.toggle("photo-grid__card-button_like_active");
+    this._handleAsyncLike();
+  }
+
+  _setLike() {
+    if (this._isLiked) {
+      this._likeButton.classList.add("photo-grid__card-button_like_active");
+    }
   }
 
   _setEventListeners() {
@@ -61,6 +79,11 @@ export default class Card {
     this._setEventListeners();
     this._cardImage.src = this._imageLink;
     this._cardTitle.textContent = this._text;
+    this._setLike();
     return this._cardElement;
+  }
+
+  removeCard() {
+    this._cardElement.remove();
   }
 }
