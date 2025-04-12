@@ -40,10 +40,15 @@ const cardSection = new Section(
             (value) => {
               console.log(value);
               if (value.delete === "true") {
-                api.deleteCard(element._id).then((res) => {
-                  console.log(res);
-                  card.removeCard();
-                });
+                api
+                  .deleteCard(element._id)
+                  .then((res) => {
+                    console.log(res);
+                    card.removeCard();
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
               }
             }
           );
@@ -54,6 +59,9 @@ const cardSection = new Section(
           api
             .handleCardLike(element._id, element.isLiked)
             .then((res) => console.log(res))
+            .catch((err) => {
+              console.log(err);
+            })
       );
       const cardElement = card.createCard(card._getTemplate());
       cardSection.addItem(cardElement);
@@ -62,10 +70,15 @@ const cardSection = new Section(
   ".photo-grid"
 );
 
-api.getInitialCards().then((data) => {
-  cardSection.items = data.reverse();
-  cardSection.setItems();
-});
+api
+  .getInitialCards()
+  .then((data) => {
+    cardSection.items = data.reverse();
+    cardSection.setItems();
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const imageOverlay = new PopupWithImage(".image-popup");
 imageOverlay.setEventListeners();
@@ -104,10 +117,15 @@ const placeForm = new PopupWithForm("#place-popup", (data) => {
       const cardDeleteWarning = new PopupWithForm("#delete-popup", (value) => {
         console.log(value);
         if (value.delete === "true") {
-          api.deleteCard(cardElement._id).then((res) => {
-            console.log(res);
-            card.removeCard();
-          });
+          api
+            .deleteCard(cardElement._id)
+            .then((res) => {
+              console.log(res);
+              card.removeCard();
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         }
       });
       cardDeleteWarning.setEventListeners();
@@ -144,20 +162,28 @@ addPlaceButton.addEventListener("click", () => {
   placeForm.open();
 });
 
-api.getUserData().then((data) => {
-  console.log(data);
-  info.setUserInfo(data.name, data.about, data.avatar);
-  nameInput.value = data.name;
-  jobInput.value = data.about;
-  userAvatar.src = data.avatar;
-});
+api
+  .getUserData()
+  .then((data) => {
+    console.log(data);
+    info.setUserInfo(data.name, data.about, data.avatar);
+    nameInput.value = data.name;
+    jobInput.value = data.about;
+    userAvatar.src = data.avatar;
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const avatarForm = new PopupWithForm("#avatar-popup", (values) => {
   info._userProfilePicture.src = values.avatar;
   console.log(info.getUserInfo());
   api
     .updateUserAvatar({ avatar: values.avatar })
-    .then((res) => console.log(res));
+    .then((res) => console.log(res))
+    .catch((err) => {
+      console.log(err);
+    });
 });
 avatarForm.setEventListeners();
 
