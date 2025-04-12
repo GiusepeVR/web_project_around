@@ -16,15 +16,16 @@ export default class UserInfo {
   getUserInfo() {
     const userData = {
       name: this._userNameLabel.textContent,
-      job: this._userJobLabel.textContent,
-      imageLink: this._userProfilePicture.src,
+      about: this._userJobLabel.textContent,
+      avatar: this._userProfilePicture.src,
       _id: this._userId,
     };
     return userData;
   }
 
-  setUserInfo(name, job) {
+  setUserInfo(name, about, avatar) {
     this._userNameLabel.textContent = name;
-    this._userJobLabel.textContent = job;
+    this._userJobLabel.textContent = about;
+    this._userProfilePicture.src = avatar;
   }
 }

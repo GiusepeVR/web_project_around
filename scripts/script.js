@@ -13,6 +13,7 @@ import {
   nameInput,
   jobInput,
   imageEditHoverButton,
+  userAvatar,
 } from "../utils/constants.js";
 
 const api = new Api("https://around-api.es.tripleten-services.com/v1", {
@@ -100,13 +101,10 @@ const placeForm = new PopupWithForm("#place-popup", (data) => {
       imageOverlay.open(card._imageLink, card._text);
     },
     () => {
-      imageOverlay.open(card._imageLink, card._text);
-    },
-    () => {
       const cardDeleteWarning = new PopupWithForm("#delete-popup", (value) => {
         console.log(value);
         if (value.delete === "true") {
-          api.deleteCard(element._id).then((res) => {
+          api.deleteCard(cardElement._id).then((res) => {
             console.log(res);
             card.removeCard();
           });
@@ -148,14 +146,22 @@ addPlaceButton.addEventListener("click", () => {
 
 api.getUserData().then((data) => {
   console.log(data);
-  info.setUserInfo(data.name, data.about);
+  info.setUserInfo(data.name, data.about, data.avatar);
   nameInput.value = data.name;
   jobInput.value = data.about;
+  userAvatar.src = data.avatar;
 });
 
-const avatarForm = new PopupWithForm("#avatar-popup", (values) => {});
+const avatarForm = new PopupWithForm("#avatar-popup", (values) => {
+  info._userProfilePicture.src = values.avatar;
+  console.log(info.getUserInfo());
+  api
+    .updateUserAvatar({ avatar: values.avatar })
+    .then((res) => console.log(res));
+});
 avatarForm.setEventListeners();
 
 imageEditHoverButton.addEventListener("click", () => {
+  avatarForm.reset();
   avatarForm.open();
 });

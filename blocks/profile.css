@@ -32,6 +32,9 @@
 .profile__avatar {
   border-radius: 50%;
   margin-bottom: 25px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }
 
 .profile__avatar-container {
@@ -40,7 +43,8 @@
   left: 0;
   top: 0;
   width: 120px;
-  height: 120px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   margin-right: 30px;
   z-index: 10;
 }
@@ -148,9 +152,10 @@
   }
 
   .profile__avatar {
-    width: 120px;
-    height: 120px;
+    max-width: 120px;
+    height: auto;
     margin-right: 30px;
+    object-fit: cover;
   }
 }
 

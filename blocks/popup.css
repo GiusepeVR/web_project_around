@@ -119,6 +119,7 @@
 }
 
 .popup__input-error {
+  position: relative;
   margin: 0;
   margin-top: 8px;
   font-size: 12px;
@@ -131,7 +132,7 @@
 }
 
 .popup__button {
-  margin: 24px 0 0 0;
+  margin: 5% 0 0 0;
   padding: 0;
   width: 100%;
   min-height: 46px;
@@ -146,7 +147,6 @@
 }
 
 .popup__button_disabled {
-  margin: 46px 0 0 0;
   padding: 0;
   width: 100%;
   min-height: 46px;
@@ -166,7 +166,6 @@
 }
 
 .popup__button_disabled:hover {
-  margin: 46px 0 0 0;
   padding: 0;
   width: 100%;
   min-height: 46px;
