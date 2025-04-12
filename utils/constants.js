@@ -17,3 +17,7 @@ export const profileJobName = document.querySelector(".profile__description");
 
 export const nameInput = document.querySelector(".popup__input_name");
 export const jobInput = document.querySelector(".popup__input_about");
+
+export const imageEditHoverButton = document.querySelector(
+  ".profile__avatar-container"
+);

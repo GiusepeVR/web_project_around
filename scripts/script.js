@@ -12,6 +12,7 @@ import {
   editProfileButton,
   nameInput,
   jobInput,
+  imageEditHoverButton,
 } from "../utils/constants.js";
 
 const api = new Api("https://around-api.es.tripleten-services.com/v1", {
@@ -150,4 +151,11 @@ api.getUserData().then((data) => {
   info.setUserInfo(data.name, data.about);
   nameInput.value = data.name;
   jobInput.value = data.about;
+});
+
+const avatarForm = new PopupWithForm("#avatar-popup", (values) => {});
+avatarForm.setEventListeners();
+
+imageEditHoverButton.addEventListener("click", () => {
+  avatarForm.open();
 });
